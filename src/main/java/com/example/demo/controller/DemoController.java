@@ -31,8 +31,13 @@ public class DemoController {
     private DemoRepository demoRepository;
 
     @GetMapping("/{id}")
-    public Object getAll(DemoSpec demoSpec) {
+    public Object get(DemoSpec demoSpec) {
         return demoRepository.findAll(demoSpec);
+    }
+
+    @GetMapping("/")
+    public Object getAll() {
+        return demoRepository.findAll();
     }
 
     @GetMapping("/add")
